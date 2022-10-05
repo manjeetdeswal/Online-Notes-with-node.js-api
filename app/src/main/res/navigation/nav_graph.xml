@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registerFrag">
+
+    <fragment
+        android:id="@+id/login_frag"
+        android:name="com.thenotesgiver.onlinenotessaver.ui.Login_frag"
+        android:label="fragment_login_frag"
+        tools:layout="@layout/fragment_login_frag" >
+        <action
+            android:id="@+id/action_login_frag_to_mainragment"
+            app:destination="@id/mainragment"
+            app:popUpTo="@id/registerFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFrag"
+        android:name="com.thenotesgiver.onlinenotessaver.ui.RegisterFrag"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFrag_to_login_frag"
+            app:destination="@id/login_frag" />
+        <action
+            android:id="@+id/action_registerFrag_to_mainragment"
+            app:destination="@id/mainragment"
+            app:popUpTo="@id/registerFrag"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainragment"
+        android:name="com.thenotesgiver.onlinenotessaver.ui.MainFragment"
+        android:label="fragment_mainragment"
+        tools:layout="@layout/fragment_mainragment" >
+        <action
+            android:id="@+id/action_mainragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.thenotesgiver.onlinenotessaver.ui.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" />
+</navigation>
